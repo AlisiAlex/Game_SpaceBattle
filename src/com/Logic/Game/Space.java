@@ -36,7 +36,7 @@ public class Space extends JPanel implements ActionListener {
 
         for (int i = 0; i < ms.size(); i++ ) {
             Missile m = (Missile) ms.get(i);
-            g2d.drawImage(m.getImage(), m.getX(), m.getY(), this);
+            g2d.drawImage(m.getImage(), m.getX()+ 75, m.getY(), this);
         }
 
         Toolkit.getDefaultToolkit().sync();

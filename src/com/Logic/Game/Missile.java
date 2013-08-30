@@ -9,7 +9,7 @@ import java.awt.*;
         private Image image;
         boolean visible;
 
-        private final int BOARD_WIDTH = 360;
+        private final int BOARD_WIDTH = 700;
         private final int MISSILE_SPEED = 2;
 
         public Missile(int x, int y) {
