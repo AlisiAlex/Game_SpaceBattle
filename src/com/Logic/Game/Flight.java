@@ -14,9 +14,8 @@ public class Flight {
     private int y;
     private Image image;
 
-    private ArrayList missiles;
-
     private final int CRAFT_SIZE = 20;
+    private ArrayList missiles;
 
     public Flight() {
         ImageIcon ii = new ImageIcon(this.getClass().getResource(craft));
