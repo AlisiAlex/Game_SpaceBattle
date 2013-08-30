@@ -9,13 +9,12 @@ import java.awt.*;
         private Image image;
         boolean visible;
 
-        private final int BOARD_WIDTH = 390;
+        private final int BOARD_WIDTH = 360;
         private final int MISSILE_SPEED = 2;
 
         public Missile(int x, int y) {
 
-            ImageIcon ii =
-                    new ImageIcon(this.getClass().getResource("missile.png"));
+            ImageIcon ii = new ImageIcon(this.getClass().getResource("missile.png"));
             image = ii.getImage();
             visible = true;
             this.x = x;
