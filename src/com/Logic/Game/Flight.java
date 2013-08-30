@@ -3,6 +3,7 @@ package com.Logic.Game;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 public class Flight {
     private String craft = "Shatl.png";
@@ -13,14 +14,20 @@ public class Flight {
     private int y;
     private Image image;
 
-    public Flight(){
-        ImageIcon imageIcon = new ImageIcon(this.getClass().getResource(craft));
-        image = imageIcon.getImage();
+    private ArrayList missiles;
+
+    private final int CRAFT_SIZE = 20;
+
+    public Flight() {
+        ImageIcon ii = new ImageIcon(this.getClass().getResource(craft));
+        image = ii.getImage();
+        missiles = new ArrayList();
         x = 40;
         y = 60;
     }
 
-    public void move(){
+
+    public void move() {
         x += dx;
         y += dy;
     }
@@ -37,24 +44,37 @@ public class Flight {
         return image;
     }
 
+    public ArrayList getMissiles() {
+        return missiles;
+    }
+
     public void keyPressed(KeyEvent e) {
+
         int key = e.getKeyCode();
 
+        if (key == KeyEvent.VK_SPACE) {
+            fire();
+        }
+
         if (key == KeyEvent.VK_LEFT) {
-            dx = 0;
+            dx = -1;
         }
 
         if (key == KeyEvent.VK_RIGHT) {
-            dx = 0;
+            dx = 1;
         }
 
         if (key == KeyEvent.VK_UP) {
-            dy = 0;
+            dy = -1;
         }
 
         if (key == KeyEvent.VK_DOWN) {
-            dy = 0;
+            dy = 1;
         }
+    }
+
+    public void fire() {
+        missiles.add(new Missile(x + CRAFT_SIZE, y + CRAFT_SIZE/2));
     }
 
     public void keyReleased(KeyEvent e) {
