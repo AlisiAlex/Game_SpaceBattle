@@ -15,12 +15,12 @@ public class Flight {
     private Image image;
 
     private final int CRAFT_SIZE = 20;
-    private ArrayList missiles;
+    private ArrayList<Missile> missiles;
 
     public Flight() {
         ImageIcon ii = new ImageIcon(this.getClass().getResource(craft));
         image = ii.getImage();
-        missiles = new ArrayList();
+        missiles = new ArrayList<Missile>();
         x = 40;
         y = 60;
     }
@@ -43,7 +43,7 @@ public class Flight {
         return image;
     }
 
-    public ArrayList getMissiles() {
+    public ArrayList<Missile> getMissiles() {
         return missiles;
     }
 
